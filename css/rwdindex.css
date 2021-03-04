@@ -1,53 +1,47 @@
 @media screen and (max-width:1024px) {
 
-/* #header .row { position: relative; } */
-#header .open,
-#header .close {
-    display: block;
-    position: absolute;
-    top: 50%; right: 30px;
-}
-#header .close { display: none; }
-#header .open button,
-#header .close button {
-    font-size: 25px;
-    color: #000;
-    background: none;
-    border: none;
-}
 
-#header #nav {  
-    position:absolute; top:100%;  z-index:999999;
-    transform:translateY(0%);
-    background: #fff; width: 150px;
-    right:0;
-    font-size:18px; color:#1e1e1e;
-    display: none;
-}
-
-#header .nav.on {
-    display: block;
-}
-
-#header .nav .depth1 > li {
-    float:none;
-    position:relative;
-}
-#header #nav .depth1 > li > a {
-    padding:20px 40px;
-    display:inline-block;
-}
-
-#header .depth2 {
-    position:static; top:100%; left:0; 
-    background:#555; font-size:14px;
-    color:#fff;
-    width:100%;
-    text-align:center;
-    overflow:hidden;
-    transition:all 0.5s;
-    display:none;
-}
+    /* 검색창 */
+    #header .search {
+        position:absolute; 
+        right:60px;
+        top:63px; 
+        transform:translateY(0%);
+        font-size:24px; z-index:999999;
+    }
+    #header .search #sbox { border:none; text-indent:1em; width:0;  
+        overflow:hidden; transition:all 0.5s;
+        outline:none;  background:#ddd; padding:8px 0px;
+    }
+    #header .search #sbox.on {
+        width:200px; 
+    }
 
 
-} /* 마지막괄호 */
+    #header .open,
+    #header .close { 
+        position:absolute; top:50%; right:20px; 
+        transform:translateY(-50%);
+        font-size:25px; 
+    }
+    #header .open.on { display:block;  }
+    #header .close.on { display:block; }
+
+    #header h1 { /* float:left;  */ padding:25px 0 }
+
+    #header #nav {  /* float:right; */ z-index:99999;
+    position:fixed; top:123px; transform:translateY(0%);
+    right:-170px; font-size:18px; color:#1e1e1e; background:#fff; 
+    opacity:0; bottom:0; width:170px; overflow-y:auto }
+    #header.on #nav { top:96px;  }
+    /* #header #nav.on { right:0; } */
+
+    #header #nav .depth1 > li { float:none; position:relative; }
+
+    #header .depth2 { position:static; top:100%; left:0; 
+        background:#555; font-size:14px;
+        color:#fff; width:100%; text-align:center; 
+        display:none; }
+
+
+}
